@@ -5,7 +5,9 @@ use inc::Module::Install;
 name           'Term-VT102-ZeroBased';
 all_from       'lib/Term/VT102/ZeroBased.pm';
 
-requires       '';
+requires       'Term::VT102';
+requires       'Class::Method::Modifiers';
+requires       'parent';
 
 build_requires 'Test::More';
 
