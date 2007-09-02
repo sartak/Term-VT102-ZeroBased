@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-use Test::More tests => 10;
+use Test::More tests => 7;
 
 use Term::VT102::ZeroBased;
 my $term = Term::VT102::ZeroBased->new(rows => 24, cols => 80);
