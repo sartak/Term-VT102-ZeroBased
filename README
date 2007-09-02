@@ -1,6 +1,10 @@
 Term-VT102-ZeroBased 0.01
 
-Term::VT102::ZeroBased is
+Term::VT102, a module for terminal emulation, uses 1-based indices for screen
+positions. I find this annoying. So this is a simple wrapper around Term::VT102
+that converts 1-based indices to 0-based indices.
+
+See Term::VT102 for the documentation on using these modules.
 
 MAJOR CHANGES
     0.01: first version
@@ -13,27 +17,6 @@ To install this module, run the following commands:
     make
     make test
     make install
-
-SUPPORT AND DOCUMENTATION
-
-After installing, you can find documentation for this module with the perldoc
-command.
-
-    perldoc Term::VT102::ZeroBased
-
-You can also look for information at:
-
-    Search CPAN
-        http://search.cpan.org/dist/Term-VT102-ZeroBased
-
-    CPAN Request Tracker:
-        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Term-VT102-ZeroBased
-
-    AnnoCPAN, annotated CPAN documentation:
-        http://annocpan.org/dist/Term-VT102-ZeroBased
-
-    CPAN Ratings:
-        http://cpanratings.perl.org/d/Term-VT102-ZeroBased
 
 COPYRIGHT AND LICENSE
 
