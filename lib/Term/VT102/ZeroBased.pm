@@ -56,7 +56,7 @@ Term::VT102::ZeroBased - Term::VT102 but with zero-based indices
 
 =head1 VERSION
 
-Version 0.82 released ???
+Version 0.82 released 02 Sep 07
 
 =cut
 
