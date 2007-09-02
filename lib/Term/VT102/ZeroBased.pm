@@ -76,6 +76,10 @@ L<Term::VT102>, a module for terminal emulation, uses 1-based indices for
 screen positions. I find this annoying. So this is a simple wrapper around
 L<Term::VT102> that converts 1-based indices to 0-based indices.
 
+Why, in particular, would you want this? Escape sequences use one-based
+indices, so it makes perfect sense for L<Term::VT102> to use one-based
+indices. But L<Curses> uses zero-based indices. And so do most other modules.
+
 See L<Term::VT102> for the documentation on using these modules.
 
 =head1 SEE ALSO
