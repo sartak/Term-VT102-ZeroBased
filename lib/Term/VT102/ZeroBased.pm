@@ -56,17 +56,17 @@ Term::VT102::ZeroBased - Term::VT102 but with zero-based indices
 
 =head1 VERSION
 
-Version 0.82 released 02 Sep 07
+Version 0.82_01 released 02 Sep 07
 
 =cut
 
-our $VERSION = '0.82';
+our $VERSION = '0.82_01';
 
 =head1 SYNOPSIS
 
   use Term::VT102::ZeroBased;
 
-  my $vt = Term::VT102->new (cols => 80, rows => 24);
+  my $vt = Term::VT102::ZeroBased->new(cols => 80, rows => 24);
   $vt->process("\e[H");                    # move to top left
   printf "(%d, %d)!\n", $vt->x, $vt->y;    # (0, 0)!
 

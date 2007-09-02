@@ -1,4 +1,4 @@
-Term-VT102-ZeroBased 0.82
+Term-VT102-ZeroBased 0.82_01
 
 Term::VT102, a module for terminal emulation, uses 1-based indices for
 screen positions. I find this annoying. So this is a simple wrapper around
