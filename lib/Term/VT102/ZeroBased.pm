@@ -26,19 +26,28 @@ around status => sub
     return ($x, $y, @others);
 };
 
-before row_attr => sub
+around row_attr => sub
 {
-    ++$_[1];
+    my $orig = shift;
+    my ($self, $row, @rest) = @_;
+    ++$row;
+    $orig->($self, $row, @rest);
 };
 
-before row_text => sub
+around row_text => sub
 {
-    ++$_[1];
+    my $orig = shift;
+    my ($self, $row, @rest) = @_;
+    ++$row;
+    $orig->($self, $row, @rest);
 };
 
-before row_plaintext => sub
+around row_plaintext => sub
 {
-    ++$_[1];
+    my $orig = shift;
+    my ($self, $row, @rest) = @_;
+    ++$row;
+    $orig->($self, $row, @rest);
 };
 
 =head1 NAME
