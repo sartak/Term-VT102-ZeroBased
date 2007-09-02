@@ -2,16 +2,52 @@
 package Term::VT102::ZeroBased;
 use strict;
 use warnings;
+use parent 'Term::VT102';
+use Class::Method::Modifiers;
 
+around x => sub
+{
+    my $orig = shift;
+    $orig->(@_) - 1;
+};
 
+around y => sub
+{
+    my $orig = shift;
+    $orig->(@_) - 1;
+};
+
+around status => sub
+{
+    my $orig = shift;
+    my ($x, $y, @others) = $orig->(@_);
+    --$x;
+    --$y;
+    return ($x, $y, @others);
+};
+
+before row_attr => sub
+{
+    ++$_[1];
+};
+
+before row_text => sub
+{
+    ++$_[1];
+};
+
+before row_plaintext => sub
+{
+    ++$_[1];
+};
 
 =head1 NAME
 
-Term::VT102::ZeroBased - ???
+Term::VT102::ZeroBased - Term::VT102 but with zero-based indices
 
 =head1 VERSION
 
-Version 0.01 released ???
+Version 0.01 released 02 Sep 07
 
 =cut
 
@@ -19,56 +55,39 @@ our $VERSION = '0.01';
 
 =head1 SYNOPSIS
 
-    use Term::VT102::ZeroBased;
-    do_stuff();
+  use Term::VT102::ZeroBased;
+
+  my $vt = Term::VT102->new (cols => 80, rows => 24);
+  $vt->process("\e[H");                    # move to top left
+  printf "(%d, %d)!\n", $vt->x, $vt->y;    # (0, 0)!
 
 =head1 DESCRIPTION
 
+L<Term::VT102>, a module for terminal emulation, uses 1-based indices for
+screen positions. I find this annoying. So this is a simple wrapper around
+L<Term::VT102> that converts 1-based indices to 0-based indices.
 
+See L<Term::VT102> for the documentation on using these modules.
 
 =head1 SEE ALSO
 
-L<Foo::Bar>
+L<Term::VT102>, L<Class::Method::Modifiers>
 
 =head1 AUTHOR
 
-Shawn M Moore, C<< <sartak at gmail.com> >>
+Wrapper by Shawn M Moore, C<< <sartak at gmail dot com> >>
+
+L<Term::VT102> by Andrew Wood C<< <andrew dot wood at ivarch dot com> >>
 
 =head1 BUGS
 
 No known bugs.
 
-Please report any bugs through RT: email
+Please report any bugs in this module through RT: email
 C<bug-term-vt102-zerobased at rt.cpan.org>, or browse to
 L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Term-VT102-ZeroBased>.
 
-=head1 SUPPORT
-
-You can find this documentation for this module with the perldoc command.
-
-    perldoc Term::VT102::ZeroBased
-
-You can also look for information at:
-
-=over 4
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Term-VT102-ZeroBased>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Term-VT102-ZeroBased>
-
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Term-VT102-ZeroBased>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/Term-VT102-ZeroBased>
-
-=back
+Consult the L<Term::VT102> documentation for reporting bugs in that module.
 
 =head1 COPYRIGHT AND LICENSE
 
