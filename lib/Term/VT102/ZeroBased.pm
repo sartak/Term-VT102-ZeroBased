@@ -29,25 +29,25 @@ around status => sub
 around row_attr => sub
 {
     my $orig = shift;
-    my ($self, $row, @rest) = @_;
-    ++$row;
-    $orig->($self, $row, @rest);
+    my $self = shift;
+    my $row = 1 + shift;
+    $orig->($self, $row, @_);
 };
 
 around row_text => sub
 {
     my $orig = shift;
-    my ($self, $row, @rest) = @_;
-    ++$row;
-    $orig->($self, $row, @rest);
+    my $self = shift;
+    my $row = 1 + shift;
+    $orig->($self, $row, @_);
 };
 
 around row_plaintext => sub
 {
     my $orig = shift;
-    my ($self, $row, @rest) = @_;
-    ++$row;
-    $orig->($self, $row, @rest);
+    my $self = shift;
+    my $row = 1 + shift;
+    $orig->($self, $row, @_);
 };
 
 =head1 NAME
