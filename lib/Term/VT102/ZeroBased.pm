@@ -56,11 +56,11 @@ Term::VT102::ZeroBased - Term::VT102 but with zero-based indices
 
 =head1 VERSION
 
-Version 0.82_01 released 02 Sep 07
+Version 1.00 released 15 Sep 07
 
 =cut
 
-our $VERSION = '0.82_01';
+our $VERSION = '1.00';
 
 =head1 SYNOPSIS
 
