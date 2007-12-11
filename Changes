@@ -1,5 +1,8 @@
 Revision history for Term-VT102-ZeroBased
 
+1.01    Tue Dec 11 01:40:36 2007
+        Fix mishandling of startcol and endcol in row_attr, row_plaintext, etc
+
 1.00    Sat Sep 15 18:35:04 2007
         Ack, the synopsis was very wrong
 
