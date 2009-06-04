@@ -82,7 +82,7 @@ L<Term::VT102> by Andrew Wood C<< <andrew dot wood at ivarch dot com> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007 Shawn M Moore.
+Copyright 2007-2009 Shawn M Moore.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
