@@ -1,4 +1,3 @@
-#!perl
 package Term::VT102::ZeroBased;
 use strict;
 use warnings;
