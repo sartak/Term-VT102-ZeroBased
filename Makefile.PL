@@ -10,8 +10,6 @@ requires       'Term::VT102';
 requires       'Class::Method::Modifiers';
 requires       'parent';
 
-build_requires 'Test::More';
-
 auto_install;
 WriteAll;
 
