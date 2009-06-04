@@ -2,62 +2,42 @@
 package Term::VT102::ZeroBased;
 use strict;
 use warnings;
-use parent 'Term::VT102';
-use Class::Method::Modifiers;
+use base 'Term::VT102';
 
-around x => sub
-{
-    my $orig = shift;
-    $orig->(@_) - 1;
-};
+sub x { shift->SUPER::x(@_) - 1 }
+sub y { shift->SUPER::y(@_) - 1 }
 
-around y => sub
-{
-    my $orig = shift;
-    $orig->(@_) - 1;
-};
+sub status {
+    my ($x, $y, @others) = shift->SUPER::status(@_);
+    return ($x - 1, $y - 1, @others);
+}
 
-around status => sub
-{
-    my $orig = shift;
-    my ($x, $y, @others) = $orig->(@_);
-    --$x;
-    --$y;
-    return ($x, $y, @others);
-};
-
-around row_attr => sub
-{
-    my $orig  = shift;
-    my $self  = shift;
+sub row_attr {
+    my $self = shift;
     my $row   = @_ ? 1 + shift : undef;
     my $start = @_ ? 1 + shift : undef;
     my $end   = @_ ? 1 + shift : undef;
 
-    $orig->($self, $row, $start, $end, @_);
-};
+    $self->SUPER::row_attr($row, $start, $end, @_);
+}
 
-around row_text => sub
-{
-    my $orig  = shift;
-    my $self  = shift;
+sub row_text {
+    my $self = shift;
     my $row   = @_ ? 1 + shift : undef;
     my $start = @_ ? 1 + shift : undef;
     my $end   = @_ ? 1 + shift : undef;
 
-    $orig->($self, $row, $start, $end, @_);
-};
+    $self->SUPER::row_text($row, $start, $end, @_);
+}
 
-around row_plaintext => sub
-{
-    my $orig  = shift;
-    my $self  = shift;
+sub row_plaintext {
+    my $self = shift;
     my $row   = @_ ? 1 + shift : undef;
     my $start = @_ ? 1 + shift : undef;
     my $end   = @_ ? 1 + shift : undef;
 
-    $orig->($self, $row, $start, $end, @_);
-};
+    $self->SUPER::row_plaintext($row, $start, $end, @_);
+}
 
 =head1 NAME
 
@@ -93,7 +73,7 @@ See L<Term::VT102> for the documentation on using these modules.
 
 =head1 SEE ALSO
 
-L<Term::VT102>, L<Class::Method::Modifiers>
+L<Term::VT102>
 
 =head1 AUTHOR
 

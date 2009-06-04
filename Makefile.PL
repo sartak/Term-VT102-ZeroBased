@@ -7,8 +7,6 @@ all_from       'lib/Term/VT102/ZeroBased.pm';
 githubmeta;
 
 requires       'Term::VT102';
-requires       'Class::Method::Modifiers';
-requires       'parent';
 
 auto_install;
 WriteAll;
