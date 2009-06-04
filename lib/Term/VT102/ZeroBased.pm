@@ -80,16 +80,6 @@ Wrapper by Shawn M Moore, C<< <sartak at gmail dot com> >>
 
 L<Term::VT102> by Andrew Wood C<< <andrew dot wood at ivarch dot com> >>
 
-=head1 BUGS
-
-No known bugs.
-
-Please report any bugs in this module through RT: email
-C<bug-term-vt102-zerobased at rt.cpan.org>, or browse to
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Term-VT102-ZeroBased>.
-
-Consult the L<Term::VT102> documentation for reporting bugs in that module.
-
 =head1 COPYRIGHT AND LICENSE
 
 Copyright 2007 Shawn M Moore.
