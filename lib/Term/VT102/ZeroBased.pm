@@ -3,6 +3,8 @@ use strict;
 use warnings;
 use base 'Term::VT102';
 
+our $VERSION = '1.02';
+
 sub x { shift->SUPER::x(@_) - 1 }
 sub y { shift->SUPER::y(@_) - 1 }
 
@@ -38,17 +40,13 @@ sub row_plaintext {
     $self->SUPER::row_plaintext($row, $start, $end, @_);
 }
 
+1;
+
+__END__
+
 =head1 NAME
 
 Term::VT102::ZeroBased - Term::VT102 but with zero-based indices
-
-=head1 VERSION
-
-Version 1.02 released ???
-
-=cut
-
-our $VERSION = '1.02';
 
 =head1 SYNOPSIS
 
@@ -88,6 +86,4 @@ This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
 =cut
-
-1;
 
