@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base 'Term::VT102';
 
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 sub x { shift->SUPER::x(@_) - 1 }
 sub y { shift->SUPER::y(@_) - 1 }
