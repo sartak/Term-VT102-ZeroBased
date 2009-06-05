@@ -74,9 +74,9 @@ L<Term::VT102>
 
 =head1 AUTHOR
 
-Wrapper by Shawn M Moore, C<< <sartak at gmail dot com> >>
+Wrapper by Shawn M Moore, C<sartak@gmail.com>
 
-L<Term::VT102> by Andrew Wood C<< <andrew dot wood at ivarch dot com> >>
+L<Term::VT102> by Andrew Wood C<andrew.wood@ivarch.com>
 
 =head1 COPYRIGHT AND LICENSE
 
